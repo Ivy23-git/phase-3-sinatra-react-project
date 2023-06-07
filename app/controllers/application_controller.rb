@@ -94,4 +94,8 @@ end
     project.destroy
     project.to_json
   end
+  get '/members' do
+    pa = ProjectMember.all
+    pa.to_json
+  end
 end
