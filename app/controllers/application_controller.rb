@@ -125,5 +125,11 @@ end
       { error: 'Failed to create user' }.to_json
     end
   end
+  get '/projects/:project_id/members' do
+    project = Project.find(params[:project_id])
+    members = project.members
+    members.to_json(include: :project)
+  end
+  
 
 end
