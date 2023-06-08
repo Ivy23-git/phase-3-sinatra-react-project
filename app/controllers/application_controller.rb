@@ -98,4 +98,32 @@ end
     pa = ProjectMember.all
     pa.to_json
   end
+  post '/signIn' do
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id # Set the user ID in the session
+      puts "#{session[:user_id]}"
+      status 200
+      { user_id: user.id, name: user.name }.to_json
+    else
+      status 401
+      { error: 'Invalid credentials' }.to_json
+    end
+  end
+
+  post '/users' do
+    user = User.create(
+      name: params[:name],
+      email: params[:email],
+      password: params[:password]
+    )
+    if user.valid?
+      status 201
+      user.to_json
+    else
+      status 400
+      { error: 'Failed to create user' }.to_json
+    end
+  end
+
 end
