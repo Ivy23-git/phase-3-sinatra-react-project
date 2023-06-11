@@ -71,14 +71,7 @@ end
     projects = Project.all
     projects.to_json
   end
-  post '/projects' do
-    project = Project.create(
-      name: params[:name],
-      title: params[:title],
-      description: params[:description]
-    )
-    project.to_json
-  end
+  
   patch '/projects/:id' do
     project = Project.find(params[:id])
     project.update(
@@ -130,6 +123,21 @@ end
     members = project.members
     members.to_json(include: :project)
   end
-  
+
+  post '/projects' do
+    project = Project.create(
+      name: params[:name],
+      title: params[:title],
+      description: params[:description]
+    )
+
+    if project.valid?
+      status 201
+      project.to_json
+    else
+      status 400
+      { error: 'Failed to create project' }.to_json
+    end
+  end
 
 end

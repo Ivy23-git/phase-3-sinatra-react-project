@@ -10,7 +10,7 @@ project3 = Project.create(username: 'PQR', title: 'Product Quality Review', desc
 project4 = Project.create(username: 'LMN', title: 'Localization Management Initiative', description: 'Translation and localization project', user_id: 40)
 project5 = Project.create(username: 'DEF', title: 'Data Encryption Framework', description: 'Development of a data encryption system', user_id: 50)
 
-10.times do
+15.times do
   user = User.create(
     username: Faker::Internet.username,
     password: Faker::Internet.password,
