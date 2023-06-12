@@ -52,7 +52,7 @@ class ApplicationController < Sinatra::Base
       username: params[:username],
       email: params[:email],
       user_id: params[:user_id],
-      project_id: params[:project.id]
+      project_id: params[:project_id]
     )
     member.to_json
   end
