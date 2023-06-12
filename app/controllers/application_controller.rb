@@ -82,7 +82,6 @@ class ApplicationController < Sinatra::Base
   patch '/projects/:id' do
     project = Project.find(params[:id])
     project.update(
-      username: params[:username],
       title: params[:title],
       description: params[:description]
     )
