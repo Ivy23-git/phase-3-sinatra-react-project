@@ -4,8 +4,10 @@ class ApplicationController < Sinatra::Base
   before do
     response.headers["Access-Control-Allow-Origin"]="*"
   end
-  get '/project' do
-end
+  get '/projects' do
+    projects = Project.all
+    projects.to_json
+  end
   
   # Add routes
   get '/users' do 
@@ -125,7 +127,7 @@ end
       { error: 'Failed to create user' }.to_json
     end
   end
-  
+
   get '/projects/:project_id/members' do
     project = Project.find(params[:project_id])
     members = project.members
