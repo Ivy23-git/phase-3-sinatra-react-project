@@ -35,7 +35,7 @@ end
     user.destroy
     user.to_json
   end
-  
+
   # Members
   get '/project-members' do 
     members = ProjectMember.all
@@ -58,8 +58,7 @@ end
       user_id: params[:user.id],
       project_id: params[:project.id]
     )
-      member.to_json
-    
+      member.to_json 
   end
 
   delete '/project-members/:id' do
