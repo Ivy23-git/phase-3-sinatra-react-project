@@ -12,6 +12,7 @@ end
     users = User.all
         users.to_json
   end
+
   post '/users' do
     user = User.create(
       username: params[:username],
@@ -20,6 +21,7 @@ end
     )
     user.to_json
   end
+
   patch '/users/:id' do
     user = User.find(params[:id])
     user.update(
@@ -41,6 +43,7 @@ end
     members = ProjectMember.all
     members.to_json
   end
+
   post '/project-members' do
     member = ProjectMember.create(
       username: params[:username],
@@ -50,6 +53,7 @@ end
     )
     member.to_json
   end
+  
   patch '/project-members/:id' do
     member = ProjectMember.find(params[:id])
     member.update(
@@ -66,7 +70,7 @@ end
     member.destroy
     member.to_json
   end
-  
+
   # Projects
   get '/projects' do 
     projects = Project.all
@@ -92,6 +96,7 @@ end
     pa = ProjectMember.all
     pa.to_json
   end
+
   post '/signIn' do
     user = User.authenticate(params[:email], params[:password])
     if user
