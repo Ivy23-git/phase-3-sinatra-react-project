@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   before do
     response.headers["Access-Control-Allow-Origin"]="*"
   end
-  
+
   get '/projects' do
     projects = Project.all
     projects.to_json
@@ -51,7 +51,7 @@ class ApplicationController < Sinatra::Base
     member = ProjectMember.create(
       username: params[:username],
       email: params[:email],
-      user_id: params[:user.id],
+      user_id: params[:user_id],
       project_id: params[:project.id]
     )
     member.to_json
