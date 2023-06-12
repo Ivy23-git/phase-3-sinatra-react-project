@@ -8,12 +8,6 @@ The application will help empower teams to smoothen their processes,enhance easy
 
 ******
 
-## SCREENSHOTS
-- 
-- 
-
-
-********
 ## SetUp Instruction
 ### Requirements
 * [Lang](lang Url)
