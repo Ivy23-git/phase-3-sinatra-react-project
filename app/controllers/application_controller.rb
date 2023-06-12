@@ -72,7 +72,7 @@ end
     projects.to_json
   end
   
-  patch '/projects/:title' do
+  patch '/projects/:id' do
     project = Project.find(params[:id])
     project.update(
       username: params[:username],
