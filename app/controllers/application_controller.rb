@@ -66,6 +66,7 @@ end
     member.destroy
     member.to_json
   end
+  
   # Projects
   get '/projects' do 
     projects = Project.all
