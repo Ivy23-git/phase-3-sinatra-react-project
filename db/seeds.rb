@@ -25,5 +25,4 @@ member3 = ProjectMember.create(username: 'Michael Davis', email: 'michael.davis@
 member4 = ProjectMember.create(username: 'Sarah Thompson', email: 'sarah.thompson@gmail.com', user_id:4, project_id: 4)
 member5 = ProjectMember.create(username: 'David Wilson', email: 'david.wilson@gmail.com', user_id:5, project_id: 5)
 
-
 puts "✅ Done seeding!"
