@@ -53,7 +53,7 @@ end
     )
     member.to_json
   end
-  
+
   patch '/project-members/:id' do
     member = ProjectMember.find(params[:id])
     member.update(
@@ -92,6 +92,7 @@ end
     project.destroy
     project.to_json
   end
+
   get '/members' do
     pa = ProjectMember.all
     pa.to_json
@@ -124,6 +125,7 @@ end
       { error: 'Failed to create user' }.to_json
     end
   end
+  
   get '/projects/:project_id/members' do
     project = Project.find(params[:project_id])
     members = project.members
