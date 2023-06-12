@@ -41,7 +41,7 @@ end
     members.to_json
   end
   post '/project-members' do
-    member = Project-Member.create(
+    member = ProjectMember.create(
       username: params[:username],
       email: params[:email],
       user_id: params[:user.id],
@@ -72,7 +72,7 @@ end
     projects.to_json
   end
   
-  patch '/projects/:id' do
+  patch '/projects/:title' do
     project = Project.find(params[:id])
     project.update(
       username: params[:username],
