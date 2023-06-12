@@ -42,7 +42,7 @@ end
   end
   post '/project-members' do
     member = Project-Member.create(
-      name: params[:name],
+      username: params[:username],
       email: params[:email],
       user_id: params[:user.id],
       project_id: params[:project.id]
@@ -52,7 +52,7 @@ end
   patch '/project-members/:id' do
     member = ProjectMember.find(params[:id])
     member.update(
-      name: params[:name],
+      username: params[:username],
       email: params[:email],
       user_id: params[:user.id],
       project_id: params[:project.id]
@@ -75,7 +75,7 @@ end
   patch '/projects/:id' do
     project = Project.find(params[:id])
     project.update(
-      name: params[:name],
+      username: params[:username],
       title: params[:title],
       description: params[:description]
     )
@@ -106,7 +106,7 @@ end
 
   post '/users' do
     user = User.create(
-      name: params[:name],
+      username: params[:username],
       email: params[:email],
       password: params[:password]
     )
@@ -126,7 +126,7 @@ end
 
   post '/projects' do
     project = Project.create(
-      name: params[:name],
+      username: params[:username],
       title: params[:title],
       description: params[:description]
     )
