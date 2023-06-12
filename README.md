@@ -50,8 +50,9 @@ Then run server with the above command
 
 *****
 ## Technologies Used
-1. CSS
-2. React.js
+1. Ruby
+2. SQLite
+3. Sinatra
 
 *****
 ## Contact Information
