@@ -2,7 +2,7 @@ puts "🌱 Seeding spices..."
 
 Project.destroy_all
 ProjectMember.destroy_all
-# Seed your database here
+
 puts "Creating projects"
 project1 = Project.create(username: 'ABC', title: 'Awesome Business Campaign', description: 'A marketing campaign for a business', user_id: 10)
 project2 = Project.create(username: 'XYZ', title: 'Project XYZ', description: 'A software development project', user_id: 20)
