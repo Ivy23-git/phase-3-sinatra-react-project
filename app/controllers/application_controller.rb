@@ -4,6 +4,7 @@ class ApplicationController < Sinatra::Base
   before do
     response.headers["Access-Control-Allow-Origin"]="*"
   end
+  
   get '/projects' do
     projects = Project.all
     projects.to_json
@@ -78,7 +79,7 @@ class ApplicationController < Sinatra::Base
     projects = Project.all
     projects.to_json
   end
-  
+
   patch '/projects/:id' do
     project = Project.find(params[:id])
     project.update(
